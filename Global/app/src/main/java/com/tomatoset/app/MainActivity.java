@@ -2,10 +2,13 @@ package com.tomatoset.app;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.tomatoset.app.adapter.TabsPagerFragmentAdapter;
 
 import tomatoset.com.global.R;
 
@@ -15,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int LAYOUT =R.layout.main_layout;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private TabLayout tabLayout;
+    private ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         initToolbar();
         initNavigationView();
-        tabLayout = (TabLayout)findViewById(R.id.tablayout);
+        initTabs();
     }
-
-
 
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -40,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         toolbar.inflateMenu(R.menu.menu);
+    }
+
+
+    private void initTabs() {
+        pager = (ViewPager)findViewById(R.id.viewPager);
+        TabsPagerFragmentAdapter adapter = new TabsPagerFragmentAdapter(getSupportFragmentManager());
+        pager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(pager);
+
     }
 
     private void initNavigationView() {

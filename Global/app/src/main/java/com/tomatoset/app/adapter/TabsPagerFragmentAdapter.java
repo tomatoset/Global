@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-/**
- * Created by barbarossa on 23.10.15.
- */
+import com.tomatoset.app.fragment.ExampleFragment;
+
+
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
 
     private String[] tabs;
@@ -29,11 +29,11 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                break;
+                return ExampleFragment.getInstance();
             case 1:
-                break;
+                return ExampleFragment.getInstance();
             case 2:
-                break;
+                return ExampleFragment.getInstance();
         }
         return null;
     }

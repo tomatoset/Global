@@ -15,7 +15,7 @@ public class ExampleFragment extends Fragment {
 
     private View view;
 
-    private static ExampleFragment getInstance(){
+    public static ExampleFragment getInstance(){
         Bundle args = new Bundle();
         ExampleFragment fragment = new ExampleFragment();
         fragment.setArguments(args);
@@ -25,7 +25,7 @@ public class ExampleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        return super.onCreateView(inflater, container, savedInstanceState);
+        view = inflater.inflate(LAYOUT,container,false);
+        return view;
     }
 }
