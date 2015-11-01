@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 drawerLayout.closeDrawers();
                 switch (menuItem.getItemId()){
+                    case R.id.actionNotificationItem:
+                        showNotificationTab();
+                        break;
 
                 }
                 return true;
