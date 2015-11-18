@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.tomatoset.app.fragment.ExampleFragment;
+import com.tomatoset.app.fragment.MapFragment;
 
 
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
@@ -29,11 +29,11 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return ExampleFragment.getInstance();
+                return MapFragment.getInstance();
             case 1:
-                return ExampleFragment.getInstance();
+                return MapFragment.getInstance();
             case 2:
-                return ExampleFragment.getInstance();
+                return MapFragment.getInstance();
         }
         return null;
     }

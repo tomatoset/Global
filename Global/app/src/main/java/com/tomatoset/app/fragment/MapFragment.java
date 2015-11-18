@@ -1,6 +1,5 @@
 package com.tomatoset.app.fragment;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -20,13 +19,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class ExampleFragment extends Fragment {
+public class MapFragment extends Fragment {
 
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0; // 10 meters
 
@@ -44,9 +41,9 @@ public class ExampleFragment extends Fragment {
     private GoogleMap googleMap;
 
 
-    public static ExampleFragment getInstance(){
+    public static MapFragment getInstance(){
         Bundle args = new Bundle();
-        ExampleFragment fragment = new ExampleFragment();
+        MapFragment fragment = new MapFragment();
         fragment.setArguments(args);
         return fragment;
     }
