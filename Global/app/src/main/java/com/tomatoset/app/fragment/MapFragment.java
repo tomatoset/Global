@@ -25,17 +25,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapFragment extends Fragment {
 
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0; // 10 meters
-
+   /* private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0; // 10 meters
     private static final long MIN_TIME_BW_UPDATES = 0;//1000 * 60 * 1; // 1 minute
-
-    private final static boolean forceNetwork = false;
-
-
-    private LocationManager locationManager;
-    public Location location;
-    public double longitude;
-    public double latitude;
+    private final static boolean forceNetwork = false; */
 
     MapView mMapView;
     private GoogleMap googleMap;
@@ -51,7 +43,7 @@ public class MapFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_example, container,
+        View v = inflater.inflate(R.layout.fragment_map, container,
                 false);
         mMapView = (MapView) v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
@@ -65,7 +57,7 @@ public class MapFragment extends Fragment {
         }
 
         googleMap = mMapView.getMap();
-        setUpMap();
+        //setUpMap();
         return v;
     }
 
@@ -78,15 +70,15 @@ public class MapFragment extends Fragment {
         googleMap.addMarker(new MarkerOptions().position(new LatLng(0,0)).title("Marker").snippet("Snippet"));
         googleMap.setMyLocationEnabled(true);
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
-        String provider = locationManager.getBestProvider(criteria, true);
 
+       Criteria criteria = new Criteria();
+       String provider = locationManager.getBestProvider(criteria, true);
         Location myLocation = locationManager.getLastKnownLocation(provider);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        double latitude = myLocation.getLatitude();
-        double longitude = myLocation.getLongitude();
-        LatLng latLng = new LatLng(latitude, longitude);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+       double latitude = myLocation.getLatitude();
+       double longitude = myLocation.getLongitude();
+       LatLng latLng = new LatLng(latitude, longitude);
+       googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(18));
         //googleMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("You are here!").snippet("Consider yourself located"));
     }
