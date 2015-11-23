@@ -1,4 +1,4 @@
-package com.tomatoset.app.fragment;
+package com.tomatoset.app.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,11 +9,18 @@ import android.view.ViewGroup;
 
 import tomatoset.com.global.R;
 
-public class PaymentFragment extends Fragment {
+public class MenuFragment extends Fragment {
+
+    public static MenuFragment getInstance(){
+        Bundle args = new Bundle();
+        MenuFragment fragment = new MenuFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_payment, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_menu, container, false);
     }
 }

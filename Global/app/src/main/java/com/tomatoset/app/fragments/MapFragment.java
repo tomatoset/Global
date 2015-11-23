@@ -1,4 +1,4 @@
-package com.tomatoset.app.fragment;
+package com.tomatoset.app.fragments;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -40,6 +40,8 @@ public class MapFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class MapFragment extends Fragment {
         }
 
         googleMap = mMapView.getMap();
-        //setUpMap();
+        setUpMap();
         return v;
     }
 

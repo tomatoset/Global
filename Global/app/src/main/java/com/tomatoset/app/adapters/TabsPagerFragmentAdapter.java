@@ -1,10 +1,12 @@
-package com.tomatoset.app.adapter;
+package com.tomatoset.app.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.tomatoset.app.fragment.MapFragment;
+import com.tomatoset.app.fragments.MapFragment;
+import com.tomatoset.app.fragments.MenuFragment;
+import com.tomatoset.app.fragments.PaymentFragment;
 
 
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
@@ -31,9 +33,9 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
             case 0:
                 return MapFragment.getInstance();
             case 1:
-                return MapFragment.getInstance();
+                return MenuFragment.getInstance();
             case 2:
-                return MapFragment.getInstance();
+                return PaymentFragment.getInstance();
         }
         return null;
     }

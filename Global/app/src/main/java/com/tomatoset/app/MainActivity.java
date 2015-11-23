@@ -1,8 +1,11 @@
 package com.tomatoset.app;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -10,8 +13,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.tomatoset.app.adapter.TabsPagerFragmentAdapter;
+import com.tomatoset.app.activity.FilterActivity;
+import com.tomatoset.app.adapters.TabsPagerFragmentAdapter;
+
+import java.util.zip.Inflater;
 
 import tomatoset.com.global.R;
 
@@ -22,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ViewPager pager;
+    private CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,20 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         initNavigationView();
         initTabs();
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinateLayout);
+        loadSnackBar();
+
+    }
+
+    private void loadSnackBar(){
+        Snackbar
+                .make(coordinatorLayout, R.string.snackbar_text, Snackbar.LENGTH_INDEFINITE)
+                .setAction(R.string.snackbar_action, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                })
+                .show();
     }
 
     private void initToolbar() {
@@ -67,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 drawerLayout.closeDrawers();
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.actionNotificationItem:
                         showNotificationTab();
                         break;
@@ -76,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void floatButtonClick(View v){
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
     }
 
     private void showNotificationTab(){
