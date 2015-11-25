@@ -59,7 +59,7 @@ public class MapFragment extends Fragment {
         }
 
         googleMap = mMapView.getMap();
-        setUpMap();
+        // setUpMap();
         return v;
     }
 
@@ -73,14 +73,14 @@ public class MapFragment extends Fragment {
         googleMap.setMyLocationEnabled(true);
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 
-       Criteria criteria = new Criteria();
-       String provider = locationManager.getBestProvider(criteria, true);
+        Criteria criteria = new Criteria();
+        String provider = locationManager.getBestProvider(criteria, true);
         Location myLocation = locationManager.getLastKnownLocation(provider);
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-       double latitude = myLocation.getLatitude();
-       double longitude = myLocation.getLongitude();
-       LatLng latLng = new LatLng(latitude, longitude);
-       googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        double latitude = myLocation.getLatitude();
+        double longitude = myLocation.getLongitude();
+        LatLng latLng = new LatLng(latitude, longitude);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(18));
         //googleMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("You are here!").snippet("Consider yourself located"));
     }
