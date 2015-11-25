@@ -1,12 +1,12 @@
-package com.tomatoset.app;
+package com.tomatoset.app.adapters;
 
 
-public class Menu {
+public class MenuFood {
     String name;
     String sum;
     int photoId;
 
-    Menu(String name, String sum, int photoId) {
+    public MenuFood(String name, String sum, int photoId) {
         this.name = name;
         this.sum = sum;
         this.photoId = photoId;
