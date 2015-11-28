@@ -59,7 +59,7 @@ public class MapFragment extends Fragment {
         }
 
         googleMap = mMapView.getMap();
-        // setUpMap();
+        setUpMap();
         return v;
     }
 

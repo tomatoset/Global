@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tomatoset.app.models.MenuFood;
+
 import java.util.List;
 
 import tomatoset.com.global.R;
@@ -25,9 +27,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MenuViewHolder> {
 
     @Override
     public void onBindViewHolder(MenuViewHolder holder, int position) {
-        holder.foodName.setText(menuFoods.get(position).name);
-        holder.foodSum.setText(menuFoods.get(position).sum);
-        holder.foodPhoto.setImageResource(menuFoods.get(position).photoId);
+        holder.foodName.setText(menuFoods.get(position).getName());
+        holder.foodSum.setText(menuFoods.get(position).getSum());
+        holder.foodPhoto.setImageResource(menuFoods.get(position).getPhotoId());
     }
 
     @Override

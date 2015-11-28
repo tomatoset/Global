@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tomatoset.app.adapters.MenuFood;
+import com.tomatoset.app.models.MenuFood;
 import com.tomatoset.app.adapters.RVAdapter;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.tomatoset.app;
+package com.tomatoset.app.models;
 
 public class Constants {
     public static final int TAB_ONE = 0;

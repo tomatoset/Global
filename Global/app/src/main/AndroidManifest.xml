@@ -6,7 +6,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCsUWx7fGu9RHzQrCqBXhckPxiaopB99KI"/>
-        <activity android:name="com.tomatoset.app.MainActivity">
+        <activity android:name="com.tomatoset.app.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

@@ -1,7 +1,6 @@
-package com.tomatoset.app;
+package com.tomatoset.app.activity;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
@@ -15,10 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.tomatoset.app.activity.FilterActivity;
+import com.tomatoset.app.models.Constants;
 import com.tomatoset.app.adapters.TabsPagerFragmentAdapter;
-
-import java.util.zip.Inflater;
 
 import tomatoset.com.global.R;
 
