@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/actionNotificationItem"
+        android:id="@+id/actionWhereEat"
         android:orderInCategory="1"
-        android:title="@string/menu_item_notification"
-        android:icon="@mipmap/ic_message_text" />
+        android:title="@string/where_eat"
+        android:icon="@mipmap/ic_apple_safari" />
+    <item
+        android:id="@+id/actionMyOrders"
+        android:orderInCategory="1"
+        android:title="@string/my_orders"
+        android:icon="@mipmap/ic_cart_outline" />
+    <item
+        android:id="@+id/actionPromotions"
+        android:orderInCategory="1"
+        android:title="@string/promotions"
+        android:icon="@mipmap/ic_gift" />
+    <item
+        android:id="@+id/actionPersonalRoom"
+        android:orderInCategory="1"
+        android:title="@string/personal_room"
+        android:icon="@mipmap/ic_home" />
+
 </menu>

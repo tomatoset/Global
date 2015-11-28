@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">Fastbuy</string>
+    <string name="app_name">EatGid</string>
     <string name="search_title">Search</string>
-    <string name="menu_item_notification">Напоминания</string>
+    <string name="where_eat">Где поесть</string>
+    <string name="my_orders">Мои заказы</string>
+    <string name="promotions">Акции и скидки</string>
+    <string name="personal_room">Личный кабинет</string>
+
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
     <string name="snackbar_text">Выберите где будете кушать</string>
